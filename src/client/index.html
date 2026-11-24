@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OfiAgentic — Oficina Voxel Agéntica</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="webgl-canvas"></canvas>
+      <canvas id="hud-canvas"></canvas>
+
+      <header class="top-bar" id="top-bar">
+        <div class="brand-group">
+          <span class="brand-logo">🏢 OfiAgentic</span>
+          <span class="conn-pill conn-connecting" id="conn-pill">Conectando...</span>
+        </div>
+
+        <div class="toolbar-actions">
+          <button type="button" class="btn btn-primary" id="btn-hire">+ Contratar Agente</button>
+          <button type="button" class="btn btn-secondary" id="btn-demo">🎭 Modo Demo</button>
+          <button type="button" class="btn btn-secondary" id="btn-boss-gate" title="Pedir aprobación de El Jefe antes de ejecutar comandos o editar archivos">
+            🛡️ Firma Jefe: OFF
+          </button>
+
+          <div class="divider"></div>
+
+          <div class="segmented" id="lighting-controls" role="group" aria-label="Ciclo de luz">
+            <button type="button" class="seg-btn active" data-light="auto" title="Hora real">🕒 Real</button>
+            <button type="button" class="seg-btn" data-light="day" title="Día">☀️</button>
+            <button type="button" class="seg-btn" data-light="sunset" title="Atardecer">🌅</button>
+            <button type="button" class="seg-btn" data-light="night" title="Noche">🌙</button>
+          </div>
+
+          <button type="button" class="btn btn-icon" id="btn-rotate-cam" title="Rotar cámara 90°">↻ 90°</button>
+          <button type="button" class="btn btn-icon" id="btn-reset-cam" title="Centrar vista isométrica">⌖</button>
+        </div>
+      </header>
+
+      <aside class="boss-banner hidden" id="boss-banner"></aside>
+
+      <aside class="roster-bar" id="roster-bar">
+        <div class="roster-header">
+          <span>Trabajadores</span>
+          <span class="roster-count" id="roster-count">0</span>
+        </div>
+        <div class="roster-list" id="roster-list"></div>
+      </aside>
+
+      <aside class="inspector-panel hidden" id="inspector-panel"></aside>
+
+      <div class="modal-backdrop hidden" id="hire-modal"></div>
+      <div class="toast-stack" id="toast-stack"></div>
+    </div>
+
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

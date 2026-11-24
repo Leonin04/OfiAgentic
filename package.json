@@ -1,0 +1,29 @@
+{
+  "name": "ofiagentic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OfiAgentic - Bidirectional Multi-CLI 3D Voxel Agentic Office",
+  "type": "module",
+  "bin": {
+    "ofi": "./bin/ofi.mjs"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json && vite build",
+    "start": "node dist/server/index.js",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "setup:hooks": "node bin/ofi.mjs setup"
+  },
+  "dependencies": {
+    "three": "^0.170.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "@types/three": "^0.170.0",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3"
+  }
+}

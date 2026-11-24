@@ -1,0 +1,49 @@
+{
+  "ofiagentic": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node ../bin/ofi.mjs hook agy",
+        "timeout": 5
+      }
+    ],
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "node ../bin/ofi.mjs hook agy",
+        "timeout": 5
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ../bin/ofi.mjs hook agy",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ../bin/ofi.mjs hook agy",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node ../bin/ofi.mjs hook agy",
+        "timeout": 5
+      }
+    ]
+  }
+}
